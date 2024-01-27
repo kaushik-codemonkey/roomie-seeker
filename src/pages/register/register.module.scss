@@ -1,0 +1,30 @@
+.registerCardContainer {
+    background-color: rgb(112, 162, 129);
+    width: 100vw;
+    margin-left: -25px;
+
+    .registerCard {
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px;
+
+        .registerCardForm {
+            width: fit-content;
+        }
+
+        .registerFormField {
+            margin-bottom: 0px;
+            width: 280px;
+        }
+
+        .registerFormLabel {
+            width: 80px;
+        }
+
+        .registerFormAgeConsent {
+            width: max-content;
+            text-wrap: nowrap;
+            margin-left: 30px;
+        }
+    }
+}
