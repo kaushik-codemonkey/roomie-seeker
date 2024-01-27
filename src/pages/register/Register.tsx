@@ -1,21 +1,11 @@
 import { Button, Checkbox, Flex, Form, Input, Select, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import styles from './register.module.scss'
+import { UserCreate } from '../../types/User';
 interface RegisterProps {
     // onLogin: (username: string, password: string) => void;
     // onGoogleLogin: () => void;
 }
-
-type FieldType = {
-    username: string;
-    password: string;
-    confirmpassword: string;
-    first_name: string;
-    last_name?: string;
-    mobile: string;
-    email: string;
-    ageConsent: boolean;
-};
 
 const RegisterPage: React.FC<RegisterProps> = ({ }) => {
 
@@ -25,12 +15,12 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
 
     const { Option } = Select;
 
-    const handleRegistration = (values: FieldType) => {
+    const handleRegistration = (values: UserCreate) => {
         // Perform email/password login
         // onLogin(values.username, values.password);
     };
 
-    const onFinish = (values: FieldType) => {
+    const onFinish = (values: UserCreate) => {
         console.log('Success:', values);
         handleRegistration(values)
     };
@@ -62,7 +52,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
         >
             <Flex className={styles.registerCard} vertical gap={10} align='center' justify='center'>
                 {/* <Typography.Text className={styles.registerFormLabel}></Typography.Text> */}
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="Username"
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
@@ -70,7 +60,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="First Name"
                     name="first_name"
                     rules={[{ required: true, message: 'Please input your username!' }]}
@@ -78,7 +68,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="Last Name"
                     name="last_name"
                     // rules={[{ required: true, message: 'Please input your username!' }]}
@@ -86,7 +76,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="Username"
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
@@ -94,7 +84,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="Password"
                     name="password"
                     rules={[{ required: true, message: 'Please input your password!' }]}
@@ -103,7 +93,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     label="Confirm Password"
                     name="confirmpassword"
                     hasFeedback
@@ -146,7 +136,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item<FieldType>
+                <Form.Item<UserCreate>
                     name="ageConsent"
                     valuePropName="unchecked"
                     className={styles.registerFormAgeConsent}

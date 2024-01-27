@@ -1,6 +1,9 @@
 import { Button, Checkbox, Flex, Form, Input, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import loginStyles from './login.module.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { updateUser } from '../../redux/reducers/userReducer';
 interface LoginProps {
     onLogin: (username: string, password: string) => void;
     onGoogleLogin: () => void;
@@ -13,7 +16,12 @@ type FieldType = {
     remember: string;
 };
 
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC<LoginProps> = ({ }) => {
+
+    const userData = useSelector((state: RootState) => state.user)
+    const dispatch = useDispatch()
+
+
 
     useEffect(() => {
         document.title = "LogIn"
@@ -21,7 +29,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
     const handleLogin = (values: FieldType) => {
         // Perform email/password login
-        onLogin(values.username, values.password);
+        // hit the login api
+        // get the id from the reponse and user details --> store that in local and also in the redux 
+        // then navigate to the /list page
+        dispatch(updateUser({ first_name: 'Kaushik', email: 'kaushiktechie03@gmail.com', mobile: '99443351132', username: 'Kay', last_name: 'm' }));
     };
 
     const onFinish = (values: FieldType) => {
