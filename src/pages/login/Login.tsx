@@ -95,39 +95,3 @@ const Login: React.FC<LoginProps> = ({ }) => {
 };
 
 export default Login;
-
-
-//     <div>
-//         <h2>Login</h2>
-//         <form>
-//             <div>
-//                 <label>Email:</label>
-//                 <input
-//                     type="email"
-//                     value={email}
-//                     onChange={(e) => setEmail(e.target.value)}
-//                     required
-//                 />
-//             </div>
-//             <div>
-//                 <label>Password:</label>
-//                 <input
-//                     type="password"
-//                     value={password}
-//                     onChange={(e) => setPassword(e.target.value)}
-//                     required
-//                 />
-//             </div>
-//             <button type="button" onClick={handleLogin}>
-//                 Login
-//             </button>
-//             <button type="button" onClick={handleGoogleLogin}>
-//                 Login with Google
-//             </button>
-//         </form>
-//         <div>
-//             <p>
-//                 Don't have an account? <a href="/register">Register</a>
-//             </p>
-//         </div>
-//     </div>
