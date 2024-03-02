@@ -4,6 +4,7 @@ import loginStyles from './login.module.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { updateUser } from '../../redux/reducers/userReducer';
+import { Link } from 'react-router-dom';
 interface LoginProps {
     onLogin: (username: string, password: string) => void;
     onGoogleLogin: () => void;
@@ -86,7 +87,7 @@ const Login: React.FC<LoginProps> = ({ }) => {
                     </Button>
                 </Form.Item>
                 <p>
-                    Don't have an account? <a href="/register">Register</a>
+                    Don't have an account? <Link to="/register">Register</Link>
                 </p>
             </Flex>
         </Form>

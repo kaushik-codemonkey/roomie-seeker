@@ -2,6 +2,7 @@ import { Button, Checkbox, Flex, Form, Input, Select, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import styles from './register.module.scss'
 import { UserCreate } from '../../types/User';
+import { Link } from 'react-router-dom';
 interface RegisterProps {
     // onLogin: (username: string, password: string) => void;
     // onGoogleLogin: () => void;
@@ -143,6 +144,9 @@ const RegisterPage: React.FC<RegisterProps> = ({ }) => {
                 >
                     <Checkbox>I consent that I'm above the age of 18</Checkbox>
                 </Form.Item>
+                <p>
+                    Already have an account? <Link to="/login">Login</Link>
+                </p>
                 <Form.Item >
                     <Button type="primary" htmlType="submit">
                         Submit
